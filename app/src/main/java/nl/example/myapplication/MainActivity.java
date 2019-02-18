@@ -11,6 +11,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
+
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.view.GravityCompat;
@@ -53,11 +54,11 @@ public class MainActivity extends AppCompatActivity {
                     transaction2.commit();
                     return true;
                 case R.id.navigation_settings:
-//                    SettingFragment settingFragment = new SettingFragment();
-//                    FragmentTransaction transaction3 = getSupportFragmentManager().beginTransaction();
-//                    transaction3.replace(R.id.content, settingFragment );
-//                    transaction3.addToBackStack(null);
-//                    transaction3.commit();
+                    SettingsFragment settingFragment = new SettingsFragment();
+                    FragmentTransaction transaction3 = getSupportFragmentManager().beginTransaction();
+                    transaction3.replace(R.id.content, settingFragment );
+                    transaction3.addToBackStack(null);
+                    transaction3.commit();
                     return true;
             }
 
@@ -78,8 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        navigation.setSelectedItemId(R.id.content);
-
+        navigation.setSelectedItemId(R.id.navigation_new_goal);
 
         notifications ();
 
