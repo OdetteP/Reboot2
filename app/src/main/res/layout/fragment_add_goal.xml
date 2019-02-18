@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent" >
 
+
+
 <ScrollView
 android:layout_width="match_parent"
 android:layout_height="match_parent"
@@ -19,7 +21,6 @@ android:orientation="vertical">
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".GoalActivity"
-    android:background="@color/colorPrimary"
     >
 
     <TextView
@@ -33,17 +34,17 @@ android:orientation="vertical">
         android:layout_marginTop="20dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="5dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorPrimary"/>
 
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:text="@string/text_goal"
-        android:textColor="@android:color/white"
-        android:textStyle= "bold"
+        android:textColor="@android:color/black"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="5dp"
@@ -54,8 +55,7 @@ android:orientation="vertical">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/het_doel"
-        android:textStyle= "bold|italic"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="5dp"
@@ -69,18 +69,14 @@ android:orientation="vertical">
         android:layout_marginTop="3dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="5dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/rounded_corner"
-        android:minLines="2"
-        android:maxLines="5"/>
+        android:layout_marginBottom="10dp"/>
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/where_how_when"
-        android:textColor="@android:color/white"
-        android:textStyle= "bold|italic"
+        android:textColor="@android:color/black"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="5dp"
@@ -94,17 +90,14 @@ android:orientation="vertical">
         android:layout_marginTop="3dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="5dp"
-        android:layout_marginBottom="10dp"
-        android:minLines="4"
-        android:maxLines="10"
-        android:background="@drawable/rounded_corner"/>
+        android:layout_marginBottom="10dp" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/wanneer"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="5dp"
@@ -114,7 +107,6 @@ android:orientation="vertical">
         android:id="@+id/whenEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corner"
         android:layout_marginTop="3dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="5dp"
@@ -125,7 +117,7 @@ android:orientation="vertical">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/hoe"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="5dp"
@@ -135,7 +127,7 @@ android:orientation="vertical">
         android:id="@+id/howEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corner"
+        android:textColor="@android:color/black"
         android:layout_marginTop="3dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="5dp"
@@ -167,8 +159,7 @@ android:orientation="vertical">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/details"
-        android:textColor="@android:color/white"
-        android:textStyle= "bold|italic"
+        android:textColor="@android:color/black"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="5dp"
@@ -178,20 +169,16 @@ android:orientation="vertical">
         android:id="@+id/moreEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corner"
         android:layout_marginTop="3dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="5dp"
-        android:layout_marginBottom="10dp"
-        android:minLines="4"
-        android:maxLines="10"/>
+        android:layout_marginBottom="10dp"/>
 
     <android.support.constraint.ConstraintLayout
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
-
 
         <ImageButton
             android:id="@+id/nextToBtn"
@@ -200,6 +187,7 @@ android:orientation="vertical">
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/next2"
+            android:backgroundTint="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

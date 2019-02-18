@@ -84,7 +84,7 @@
     <string name="details">Eventuele details</string>
     <string name="text_goal">Welk doel stel jij jezelf!</string>
     <string name="het_doel">Het doel</string>
-    <string name="where_how_when">Waar, wanneer en hoe voe jij het doel uit? (Precieze tijd en plaats)</string>
+    <string name="where_how_when">Waar voer jij het doel uit? (Precieze tijd en plaats)</string>
 
     <string name="waar">Waar voer je het doel uit?</string>
     <string name="wanneer">Wanneer voer je het doel uit?</string>
@@ -120,4 +120,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
 </resources>

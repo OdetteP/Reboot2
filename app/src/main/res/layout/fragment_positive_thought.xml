@@ -10,8 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".PositiveThoughtsActivity"
-        android:background="@color/colorPrimary">
+        tools:context=".PositiveThoughtsActivity">
 
 
         <TextView
@@ -19,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/positive_thought_text"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="28sp"
             android:textStyle= "bold"
             android:layout_marginTop="20dp"
@@ -33,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/positive_thoughts"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle= "bold"
             android:layout_marginTop="10dp"
@@ -50,7 +49,6 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/rounded_corner"
             android:hint="@string/positive_thought1"
             android:textColor="@android:color/black" />
 
@@ -62,7 +60,6 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/rounded_corner"
             android:textColor="@android:color/black"
             android:hint="@string/positive_thought2"
             />
@@ -75,7 +72,6 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/rounded_corner"
             android:textColor="@android:color/black"
             android:hint="@string/positive_thought3"
             />
@@ -88,7 +84,6 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/rounded_corner"
             android:textColor="@android:color/black"
             android:hint="@string/positive_thought4"/>
 
@@ -96,7 +91,6 @@
             android:id="@+id/thought5EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_corner"
             android:textColor="@android:color/black"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="8dp"
@@ -118,6 +112,8 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/next2"
+                android:backgroundTint="@color/colorPrimary"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
