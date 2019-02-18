@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MoodboardFragment">
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".MoodBoardActivity"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:id="@+id/moodBoard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/moodboard"
+                android:textSize="28sp"
+                android:textColor="@android:color/white"
+                android:textStyle= "bold"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle= "bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="40dp"
+                android:text="@string/image_text"
+                android:textColor="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/moodBoardImageView2"
+                    android:layout_width="110dp"
+                    android:layout_height="160dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"
+                    app:srcCompat="@android:color/white" />
+
+                <ImageView
+                    android:id="@+id/moodBoardImageView6"
+                    android:layout_width="110dp"
+                    android:layout_height="160dp"
+                    app:srcCompat="@android:color/white"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"/>
+
+                <ImageView
+                    android:id="@+id/moodBoardImageView5"
+                    android:layout_width="110dp"
+                    android:layout_height="160dp"
+                    app:srcCompat="@android:color/white"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:id="@+id/moodBoardImageView3"
+                    android:layout_width="110dp"
+                    android:layout_height="160dp"
+                    app:srcCompat="@android:color/white"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"/>
+
+                <ImageView
+                    android:id="@+id/moodBoardImageView4"
+                    android:layout_width="110dp"
+                    android:layout_height="160dp"
+                    app:srcCompat="@android:color/white"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"/>
+
+                <ImageView
+                    android:id="@+id/moodBoardImageView7"
+                    android:layout_width="110dp"
+                    android:layout_height="160dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"
+                    app:srcCompat="@android:color/white" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/moodBoardImageView8"
+                    android:layout_width="110dp"
+                    android:layout_height="160dp"
+                    app:srcCompat="@android:color/white"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"/>
+
+                <ImageView
+                    android:id="@+id/moodBoardImageView9"
+                    android:layout_width="110dp"
+                    android:layout_height="160dp"
+                    app:srcCompat="@android:color/white"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"/>
+
+                <ImageView
+                    android:id="@+id/moodBoardImageView"
+                    android:layout_width="110dp"
+                    android:layout_height="160dp"
+                    app:srcCompat="@android:color/white"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"/>
+
+            </LinearLayout>
+
+            <android.support.constraint.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                >
+
+
+                <ImageButton
+                    android:id="@+id/nextBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/next2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
