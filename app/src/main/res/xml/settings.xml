@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent" android:layout_width="match_parent">
+    android:layout_height="match_parent" android:layout_width="match_parent"
+     >
 
     <SwitchPreference
         android:key="NOTIFICATION"
         android:title="@string/notification"
-        android:defaultValue="true" />
+        android:defaultValue="true"
+        android:subtitle="Zet je notificaties aan of uit"
+    />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="2TimesADay"
+        android:title="Krijg elke ochtend en avond een notificatie" />
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="1ADay"
+        android:title="Krijg elke dag een notificatie" />
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="onesAWeek"
+        android:title="Krijg elke week een notificatie" />
+
 </PreferenceScreen>

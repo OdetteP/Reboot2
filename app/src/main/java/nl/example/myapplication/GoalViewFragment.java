@@ -1,15 +1,21 @@
 package nl.example.myapplication;
 
 import android.annotation.SuppressLint;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
+
+import java.lang.annotation.Target;
 import java.util.List;
 
 
@@ -66,14 +72,7 @@ public class GoalViewFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param goalId Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment GoalViewFragment.
-     */
+
     // TODO: Rename and change types and number of parameters
     public static GoalViewFragment newInstance(Long goalId, Long COLUMN_IDs, String goal,
                                                String where, String when, String how,
@@ -143,37 +142,37 @@ public class GoalViewFragment extends Fragment {
         moreText.setText(mMore);
 
         moodBoardImage = view.findViewById(R.id.imageView2);
-        moodBoardImage1 = view.findViewById(R.id.imageView3);
-        moodBoardImage2 = view.findViewById(R.id.imageView4);
-        moodBoardImage3 = view.findViewById(R.id.imageView5);
-        moodBoardImage4 = view.findViewById(R.id.imageView6);
-        moodBoardImage5 = view.findViewById(R.id.imageView7);
-        moodBoardImage6 = view.findViewById(R.id.imageView8);
-        moodBoardImage7 = view.findViewById(R.id.imageView9);
-        moodBoardImage8 = view.findViewById(R.id.imageView10);
+                moodBoardImage1 = view.findViewById(R.id.imageView3);
+                moodBoardImage2 = view.findViewById(R.id.imageView4);
+                moodBoardImage3 = view.findViewById(R.id.imageView5);
+                moodBoardImage4 = view.findViewById(R.id.imageView6);
+                moodBoardImage5 = view.findViewById(R.id.imageView7);
+                moodBoardImage6 = view.findViewById(R.id.imageView8);
+                moodBoardImage7 = view.findViewById(R.id.imageView9);
+                moodBoardImage8 = view.findViewById(R.id.imageView10);
 
-        List<String> imageUrls = moodBoardDatabaseHelper.getImageUrlsFor(mgoalId);
+                List<String> imageUrls = moodBoardDatabaseHelper.getImageUrlsFor(mgoalId);
 
         if (imageUrls.size() > 0) {
-            moodBoardImage.setImageURI(Uri.parse(imageUrls.get(0)));
-            moodBoardImage.setBackgroundColor(android.R.color.black);
+        moodBoardImage.setImageURI(Uri.parse(imageUrls.get(0)));
         } if (imageUrls.size() > 1) {
-            moodBoardImage1.setImageURI(Uri.parse(imageUrls.get(1)));
+        moodBoardImage1.setImageURI(Uri.parse(imageUrls.get(1)));
         }if (imageUrls.size() > 2) {
-            moodBoardImage2.setImageURI(Uri.parse(imageUrls.get(2)));
+        moodBoardImage2.setImageURI(Uri.parse(imageUrls.get(2)));
         }if (imageUrls.size() > 3) {
-            moodBoardImage3.setImageURI(Uri.parse(imageUrls.get(3)));
+        moodBoardImage3.setImageURI(Uri.parse(imageUrls.get(3)));
         }if (imageUrls.size() > 4) {
-            moodBoardImage4.setImageURI(Uri.parse(imageUrls.get(4)));
+        moodBoardImage4.setImageURI(Uri.parse(imageUrls.get(4)));
         }if (imageUrls.size() > 5) {
-            moodBoardImage5.setImageURI(Uri.parse(imageUrls.get(5)));
+        moodBoardImage5.setImageURI(Uri.parse(imageUrls.get(5)));
         }if (imageUrls.size() > 6) {
-            moodBoardImage6.setImageURI(Uri.parse(imageUrls.get(6)));
+        moodBoardImage6.setImageURI(Uri.parse(imageUrls.get(6)));
         }if (imageUrls.size() > 7) {
-            moodBoardImage7.setImageURI(Uri.parse(imageUrls.get(7)));
+        moodBoardImage7.setImageURI(Uri.parse(imageUrls.get(7)));
         }if (imageUrls.size() > 8) {
-            moodBoardImage8.setImageURI(Uri.parse(imageUrls.get(8)));
+        moodBoardImage8.setImageURI(Uri.parse(imageUrls.get(8)));
         }
+
 
 
         positiveThoughtText = view.findViewById(R.id.textViewPositiveThought);
@@ -200,6 +199,10 @@ public class GoalViewFragment extends Fragment {
 
         return view;
     }
+
+
+
+
 
 //    // TODO: Rename method, update argument and hook method into UI event
 //    public void onButtonPressed(Uri uri) {
@@ -240,3 +243,48 @@ public class GoalViewFragment extends Fragment {
 //        void onFragmentInteraction(Uri uri);
 //    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//        moodBoardImage = view.findViewById(R.id.imageView2);
+//                moodBoardImage1 = view.findViewById(R.id.imageView3);
+//                moodBoardImage2 = view.findViewById(R.id.imageView4);
+//                moodBoardImage3 = view.findViewById(R.id.imageView5);
+//                moodBoardImage4 = view.findViewById(R.id.imageView6);
+//                moodBoardImage5 = view.findViewById(R.id.imageView7);
+//                moodBoardImage6 = view.findViewById(R.id.imageView8);
+//                moodBoardImage7 = view.findViewById(R.id.imageView9);
+//                moodBoardImage8 = view.findViewById(R.id.imageView10);
+//
+//                List<String> imageUrls = moodBoardDatabaseHelper.getImageUrlsFor(mgoalId);
+//
+//        if (imageUrls.size() > 0) {
+//        moodBoardImage.setImageURI(Uri.parse(imageUrls.get(0)));
+//        } if (imageUrls.size() > 1) {
+//        moodBoardImage1.setImageURI(Uri.parse(imageUrls.get(1)));
+//        }if (imageUrls.size() > 2) {
+//        moodBoardImage2.setImageURI(Uri.parse(imageUrls.get(2)));
+//        }if (imageUrls.size() > 3) {
+//        moodBoardImage3.setImageURI(Uri.parse(imageUrls.get(3)));
+//        }if (imageUrls.size() > 4) {
+//        moodBoardImage4.setImageURI(Uri.parse(imageUrls.get(4)));
+//        }if (imageUrls.size() > 5) {
+//        moodBoardImage5.setImageURI(Uri.parse(imageUrls.get(5)));
+//        }if (imageUrls.size() > 6) {
+//        moodBoardImage6.setImageURI(Uri.parse(imageUrls.get(6)));
+//        }if (imageUrls.size() > 7) {
+//        moodBoardImage7.setImageURI(Uri.parse(imageUrls.get(7)));
+//        }if (imageUrls.size() > 8) {
+//        moodBoardImage8.setImageURI(Uri.parse(imageUrls.get(8)));
+//        }

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -31,6 +32,7 @@ public class AddGoalMainPageFragment extends Fragment {
 //    private Long mgoalId;
     private String mParam2;
 
+    TextView addNewGoalText;
    // private OnFragmentInteractionListener mListener;
 
     ImageButton addNewGoalBtn;
@@ -78,6 +80,8 @@ public class AddGoalMainPageFragment extends Fragment {
         mainModel = new MainModel();
         mainModel.initialize(this.getContext());
         mGetGoalIds = mainModel.getGoalIds();
+
+        addNewGoalText = view.findViewById(R.id.add_new_goal_text);
 
         addNewGoalBtn = view.findViewById(R.id.add_new_goal_btn);
         addNewGoalBtn.setOnClickListener(new View.OnClickListener() {

@@ -6,6 +6,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".PositiveThoughtFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,11 +24,12 @@
             android:text="@string/positive_thought_text"
             android:textColor="@android:color/black"
             android:textSize="28sp"
-            android:textStyle= "bold"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="20dp"
+            android:background="@color/colorPrimary"
+            android:textStyle="bold"
             />
 
         <TextView
@@ -33,8 +38,6 @@
             android:layout_height="wrap_content"
             android:text="@string/positive_thoughts"
             android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle= "bold"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="5dp"
@@ -49,7 +52,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="10dp"
-            android:hint="@string/positive_thought1"
+            android:hint="@string/positive_thoughts"
             android:textColor="@android:color/black" />
 
         <EditText
@@ -61,7 +64,7 @@
             android:layout_marginRight="5dp"
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
-            android:hint="@string/positive_thought2"
+            android:hint="@string/positive_thoughts"
             />
 
         <EditText
@@ -73,7 +76,7 @@
             android:layout_marginRight="5dp"
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
-            android:hint="@string/positive_thought3"
+            android:hint="@string/positive_thoughts"
             />
 
         <EditText
@@ -85,7 +88,7 @@
             android:layout_marginRight="5dp"
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
-            android:hint="@string/positive_thought4"/>
+            android:hint="@string/positive_thoughts"/>
 
         <EditText
             android:id="@+id/thought5EditText"
@@ -96,7 +99,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="10dp"
-            android:hint="@string/positive_thought5" />
+            android:hint="@string/positive_thoughts" />
 
         <android.support.constraint.ConstraintLayout
 
@@ -121,5 +124,7 @@
         </android.support.constraint.ConstraintLayout>
 
     </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>
