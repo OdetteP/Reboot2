@@ -27,6 +27,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.cleveroad.slidingtutorial.TutorialOptions;
+
 import static android.os.Build.ID;
 
 public class MainActivity extends AppCompatActivity {
@@ -87,7 +89,12 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_new_goal);
 
+
+
     }
+
+
+
 
 
 

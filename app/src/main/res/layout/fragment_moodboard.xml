@@ -43,7 +43,7 @@
             <ImageView
                 android:id="@+id/moodBoardImageView2"
                 android:layout_width="380dp"
-                android:layout_height="380dp"
+                android:layout_height="430dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="2dp"
@@ -54,7 +54,7 @@
             <ImageView
                 android:id="@+id/moodBoardImageView6"
                 android:layout_width="380dp"
-                android:layout_height="380dp"
+                android:layout_height="430dp"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="2dp"
@@ -64,7 +64,7 @@
             <ImageView
                 android:id="@+id/moodBoardImageView5"
                 android:layout_width="380dp"
-                android:layout_height="380dp"
+                android:layout_height="430dp"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="2dp"
@@ -74,7 +74,7 @@
             <ImageView
                 android:id="@+id/moodBoardImageView3"
                 android:layout_width="380dp"
-                android:layout_height="380dp"
+                android:layout_height="430dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="2dp"
@@ -84,7 +84,7 @@
             <ImageView
                 android:id="@+id/moodBoardImageView4"
                 android:layout_width="380dp"
-                android:layout_height="380dp"
+                android:layout_height="430dp"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="2dp"
@@ -94,7 +94,7 @@
             <ImageView
                 android:id="@+id/moodBoardImageView7"
                 android:layout_width="380dp"
-                android:layout_height="380dp"
+                android:layout_height="430dp"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="2dp"
@@ -104,7 +104,7 @@
             <ImageView
                 android:id="@+id/moodBoardImageView8"
                 android:layout_width="380dp"
-                android:layout_height="380dp"
+                android:layout_height="430dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="2dp"
@@ -114,7 +114,7 @@
             <ImageView
                 android:id="@+id/moodBoardImageView9"
                 android:layout_width="380dp"
-                android:layout_height="380dp"
+                android:layout_height="430dp"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="2dp"
@@ -124,7 +124,7 @@
             <ImageView
                 android:id="@+id/moodBoardImageView"
                 android:layout_width="380dp"
-                android:layout_height="380dp"
+                android:layout_height="430dp"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="2dp"

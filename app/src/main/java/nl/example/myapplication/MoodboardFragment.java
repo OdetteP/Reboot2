@@ -16,8 +16,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,8 +86,6 @@ public class MoodboardFragment extends Fragment {
         moodBoardImage7 = view.findViewById(R.id.moodBoardImageView7);
         moodBoardImage8 = view.findViewById(R.id.moodBoardImageView8);
         moodBoardImage9 = view.findViewById(R.id.moodBoardImageView9);
-
-        Picasso.get().load("http://i.imgur.com/DvpvklR.png").into(moodBoardImage);
 
 
         moodBoardDatabaseHelper = new MoodBoardDatabaseHelper(getContext());
