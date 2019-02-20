@@ -21,16 +21,14 @@
             android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/positive_thought_text"
-            android:textColor="@android:color/black"
-            android:textSize="28sp"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="20dp"
             android:background="@color/colorPrimary"
-            android:textStyle="bold"
-            />
+            android:text="@string/positive_thought_text"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView9"

@@ -3,6 +3,7 @@ package nl.example.myapplication;
 import android.content.Context;
 import android.database.DataSetObserver;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
@@ -11,23 +12,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.List;
 import java.util.Objects;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link MyGoalListFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link MyGoalListFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class MyGoalListFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,14 +57,6 @@ public class MyGoalListFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MyGoalListFragment.
-     */
     // TODO: Rename and change types and number of parameters
     public static MyGoalListFragment newInstance(String param1, String param2) {
         MyGoalListFragment fragment = new MyGoalListFragment();
@@ -120,29 +107,9 @@ public class MyGoalListFragment extends Fragment {
         goalListView.setAdapter(databaseAdapter);
 
 
-//        nextGoalBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                AddGoalFragment nextFrag= new AddGoalFragment();
-//                getActivity().getSupportFragmentManager().beginTransaction()
-//                        .replace(R.id.content, nextFrag, "findThisFragment")
-//                        .addToBackStack(null)
-//                        .commit();
-
-
-
-//                Intent nextGoalIntent = new Intent(ListOfGoalsActivity.this, GoalActivity.class);
-//                nextGoalIntent.putExtra("mgoalId", mgoalId);
-//                startActivity(nextGoalIntent);
-//            }
-//        });
-
                 goalListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//
-//                Intent intent = getIntent();
-//                intent.putExtra("mgoalId", mGetGoalIds.get(i));
 
                 getImages = moodBoardDatabaseHelper.getImageUrlsFor(Long.valueOf(mGetGoalIds.get(i))).toArray(new String[0]);
                 mGetPositiveThought = positiveThoughtsDatabaseHelper.getPositiveThoughtsFor(Long.valueOf(mGetGoalIds.get(i))).toArray(new String[0]);
@@ -211,6 +178,11 @@ public class MyGoalListFragment extends Fragment {
 
             goalTextView.setText(String.valueOf(mGoals.get(i)));
 
+            final ProgressBar progressBar = view.findViewById(R.id.progressBar);
+            progressBar.setProgress(0);
+            UpdaterAsyncTask task = new UpdaterAsyncTask();
+            task.setProgressBar(progressBar);
+//            task.execute();
 
             return view;
         }
@@ -229,6 +201,74 @@ public class MyGoalListFragment extends Fragment {
         public boolean isEmpty() {
             return false;
         }
+    }
+
+
+    private class UpdaterAsyncTask extends AsyncTask<Void, Void, Void> {
+
+        boolean isRunning = true;
+
+        ProgressBar bar;
+
+        public void setProgressBar(ProgressBar bar) {
+            this.bar = bar;
+        }
+
+
+        public void stop() {
+            isRunning = false;
+        }
+
+
+        @Override
+        protected Void doInBackground(Void... params) {
+
+            while (isRunning) {
+
+                // Gather data about your adapter objects
+                // If an object has changed, mark it as dirty
+
+                publishProgress();
+
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            return null;
+        }
+
+
+//        @Override
+//        protected void onProgressUpdate(Integer... values) {
+//            super.onProgressUpdate(values);
+//            if (this.bar != null) {
+//                bar.setProgress(values[0]);
+//            }
+//        }
+//        protected void onProgressUpdate(Integer ... values) {
+//            super.onProgressUpdate();
+//            if (this.bar != null) {
+//                bar.setProgress(values[0]);
+//            }
+//        }
+
+//
+//            // Update only when we're not scrolling, and only for visible views
+//            if (mScrollState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE) {
+//                int start = goalListView.getFirstVisiblePosition();
+//                for(int i = start, j = goalListView.getLastVisiblePosition(); i<=j; i++) {
+//                    View view = goalListView.getChildAt(i-start);
+//                    if (((getContext())goalListView.getItemAtPosition(i)).dirty) {
+//                        goalListView.getAdapter().getView(i, view, goalListView); // Tell the adapter to update this view
+//                    }
+//
+//                }
+//            }
+//
+//        }
     }
 
 //    // TODO: Rename method, update argument and hook method into UI event

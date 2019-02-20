@@ -1,27 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent" android:layout_width="match_parent"
-     >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:widgetLayout="@layout/custom_pref">
+
+    <EditTextPreference
+        android:clickable="false"
+        android:defaultValue="false"
+        android:key="pref_static_field_key"
+/>
+
+    <EditTextPreference
+        android:clickable="false"
+        android:defaultValue="false"
+        android:key="pref_static_field_key"
+        android:summary="Pas hier jou settings aan"
+        android:textColor="@android:color/black"
+        android:title="Settings" />
+
 
     <SwitchPreference
+        android:defaultValue="false"
+        android:icon="@android:drawable/ic_lock_idle_alarm"
         android:key="NOTIFICATION"
-        android:title="@string/notification"
-        android:defaultValue="true"
         android:subtitle="Zet je notificaties aan of uit"
-    />
-    <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="2TimesADay"
-        android:title="Krijg elke ochtend en avond een notificatie" />
+        android:title="@string/notification" />
 
-    <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="1ADay"
-        android:title="Krijg elke dag een notificatie" />
+    <!--<CheckBoxPreference-->
+    <!--android:defaultValue="false"-->
+    <!--android:key="2TimesADay"-->
+    <!--android:title="Krijg elke ochtend en avond een notificatie" />-->
 
-    <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="onesAWeek"
-        android:title="Krijg elke week een notificatie" />
+    <!--<CheckBoxPreference-->
+    <!--android:defaultValue="false"-->
+    <!--android:key="1ADay"-->
+    <!--android:title="Krijg elke dag een notificatie" />-->
+
+    <!--<CheckBoxPreference-->
+    <!--android:defaultValue="false"-->
+    <!--android:key="onesAWeek"-->
+    <!--android:title="Krijg elke week een notificatie" />-->
 
 </PreferenceScreen>

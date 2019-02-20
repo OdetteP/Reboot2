@@ -1,10 +1,14 @@
 package nl.example.myapplication;
 
+import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
@@ -23,8 +27,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import static android.os.Build.ID;
+
 public class MainActivity extends AppCompatActivity {
 
+
+    private static final int NOTIFICATION_REMINDER_NIGHT = 1 ;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -67,7 +75,8 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private DrawerLayout mDrawerLayout;
-
+    private Context context;
+    private AlarmManager alarmManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,8 +86,6 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_new_goal);
-
-        notifications ();
 
     }
 

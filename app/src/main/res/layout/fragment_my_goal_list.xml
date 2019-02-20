@@ -32,19 +32,20 @@
             android:id="@+id/textView19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:text="@string/goal_overview_text"
-            android:textSize="20sp"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="5dp"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp"
+            android:text="@string/goal_overview_text"
+            android:textColor="@android:color/black" />
 
         <ListView
             android:id="@+id/goalListView"
             android:layout_width="match_parent"
-            android:layout_height="341dp"
-            android:layout_marginStart="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
             android:textColor="@android:color/black"
             tools:layout_editor_absoluteX="11dp"
             tools:layout_editor_absoluteY="100dp" />
