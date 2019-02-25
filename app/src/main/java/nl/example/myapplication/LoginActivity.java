@@ -1,43 +1,17 @@
 package nl.example.myapplication;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.app.LoaderManager.LoaderCallbacks;
 
-import android.content.CursorLoader;
-import android.content.Loader;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.AsyncTask;
-
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.text.TextUtils;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
-
-
-import static android.Manifest.permission.READ_CONTACTS;
 
 /**
  * A login screen that offers login via email/password.
@@ -63,7 +37,11 @@ public class LoginActivity extends AppCompatActivity {
         _loginButton = findViewById(R.id.btn_login);
 
 
-
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        Boolean loggedIn = preferences.getBoolean("LoggedIn", false);
+        Boolean hasSeenTutorial = preferences.getBoolean("HasSeenTutorial", false);
+        if(!loggedIn)
+        {
             _loginButton.setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -72,16 +50,14 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
 
-//
-//        _signupLink.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                // Start the Signup activity
-//                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
-//                startActivityForResult(intent, REQUEST_SIGNUP);
-//            }
-//        });
+        } else if (!hasSeenTutorial){
+            Intent intent = new Intent(getApplicationContext(), TutorialActivity.class);
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+        }
+
     }
 
     public void login() {
@@ -109,14 +85,14 @@ public class LoginActivity extends AppCompatActivity {
                 new Runnable() {
                     public void run() {
                         // On complete call either onLoginSuccess or onLoginFailed
+
                         onLoginSuccess();
                         // onLoginFailed();
                         progressDialog.dismiss();
                     }
                     }, 3000);
 
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
+
     }
 
 
@@ -139,6 +115,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onLoginSuccess() {
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("LoggedIn",true);
+        editor.apply();
+
         _loginButton.setEnabled(true);
         finish();
     }
@@ -171,6 +153,14 @@ public class LoginActivity extends AppCompatActivity {
 
         return valid;
     }
+
+    public void replaceTutorialFragment() {
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.container, CustomTutorialFragment.newInstance())
+                .commit();
+    }
+
 }
 //    /**
 //     * Id to identity READ_CONTACTS permission request.
