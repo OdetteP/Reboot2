@@ -171,18 +171,10 @@ public class MyGoalListFragment extends Fragment {
 
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
-
             view = getLayoutInflater().inflate(R.layout.detail_listview_main, null);
 
             TextView goalTextView = view.findViewById(R.id.goalTextView);
-
             goalTextView.setText(String.valueOf(mGoals.get(i)));
-
-            final ProgressBar progressBar = view.findViewById(R.id.progressBar);
-            progressBar.setProgress(0);
-            UpdaterAsyncTask task = new UpdaterAsyncTask();
-            task.setProgressBar(progressBar);
-//            task.execute();
 
             return view;
         }

@@ -42,10 +42,10 @@ public class AlarmReceiver extends BroadcastReceiver {
         b.setAutoCancel(true)
                 .setDefaults(NotificationCompat.DEFAULT_ALL)
                 .setWhen(System.currentTimeMillis())
-//                .setSmallIcon(R.mipmap.ic_launcher_foreground)
-                .setTicker("{Time to watch some cool stuff!}")
-                .setContentTitle("My Cool App")
-                .setContentText("Time to watch some cool stuff!")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setTicker("{Tijd voor jouw dagelijkse portie innerlijke reis tot succes! }")
+                .setContentTitle("Magnificent Mind tijd")
+                .setContentText("Tijd om jouw doelen te verwezelijken!")
                 .setContentInfo("INFO")
                 .setContentIntent(pendingI);
 

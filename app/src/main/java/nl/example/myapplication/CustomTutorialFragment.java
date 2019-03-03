@@ -2,8 +2,10 @@ package nl.example.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
@@ -42,16 +44,19 @@ public class CustomTutorialFragment extends TutorialFragment
         implements OnTutorialPageChangeListener {
 
     private static final String TAG = "CustomTutorialFragment";
-    private static final int TOTAL_PAGES = 6;
+    private static final int TOTAL_PAGES = 3;
 
     private final View.OnClickListener mOnSkipClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            preferences.edit().putBoolean("HasSeenTutorial", true).apply();
+
             Intent intent = new Intent(getActivity(), MainActivity.class);
             startActivity(intent);        }
     };
 
-    private final TutorialPageOptionsProvider mTutorialPageOptionsProvider = new CustomTutorialOptionsProvider();
+//    private final TutorialPageOptionsProvider mTutorialPageOptionsProvider = new CustomTutorialOptionsProvider();
     private final TutorialPageProvider<Fragment> mTutorialPageProvider = new CustomTutorialPageProvider();
 
     private int[] pagesColors;
@@ -69,12 +74,12 @@ public class CustomTutorialFragment extends TutorialFragment
         if (pagesColors == null) {
             Activity activity = getActivity();
             pagesColors = new int[]{
-                    ContextCompat.getColor(activity, android.R.color.darker_gray),
-                    ContextCompat.getColor(activity, android.R.color.holo_green_dark),
-                    ContextCompat.getColor(activity, android.R.color.holo_red_dark),
-                    ContextCompat.getColor(activity, android.R.color.holo_blue_dark),
-                    ContextCompat.getColor(activity, android.R.color.holo_purple),
-                    ContextCompat.getColor(activity, android.R.color.holo_orange_dark),
+//                    ContextCompat.getColor(activity, android.R.color.darker_gray),
+//                    ContextCompat.getColor(activity, android.R.color.holo_green_dark),
+                    ContextCompat.getColor(activity, R.color.colorPrimary),
+//                    ContextCompat.getColor(activity, android.R.color.holo_blue_dark),
+//                    ContextCompat.getColor(activity, android.R.color.holo_purple),
+//                    ContextCompat.getColor(activity, android.R.color.holo_orange_dark),
             };
         }
         addOnTutorialPageChangeListener(this);
@@ -119,7 +124,7 @@ public class CustomTutorialFragment extends TutorialFragment
                         .setSelectedElementColor(Color.LTGRAY)
 //                        .setRenderer(DrawableRenderer.create(getActivity()))
                         .build())
-                .setTutorialPageProvider(mTutorialPageOptionsProvider)
+//                .setTutorialPageProvider(mTutorialPageOptionsProvider)
                 .setTutorialPageProvider(mTutorialPageProvider)
                 .setOnSkipClickListener(mOnSkipClickListener)
                 .build();

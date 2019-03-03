@@ -56,13 +56,13 @@ public class MainActivity extends AppCompatActivity {
                     transaction1.addToBackStack(null);
                     transaction1.commit();
                     return true;
-                case R.id.navigation_me:
-                    MeFragment meFragment = new MeFragment();
-                    FragmentTransaction transaction2 = getSupportFragmentManager().beginTransaction();
-                    transaction2.replace(R.id.content, meFragment );
-                    transaction2.addToBackStack(null);
-                    transaction2.commit();
-                    return true;
+//                case R.id.navigation_me:
+//                    MeFragment meFragment = new MeFragment();
+//                    FragmentTransaction transaction2 = getSupportFragmentManager().beginTransaction();
+//                    transaction2.replace(R.id.content, meFragment );
+//                    transaction2.addToBackStack(null);
+//                    transaction2.commit();
+//                    return true;
                 case R.id.navigation_settings:
                     SettingsFragment settingFragment = new SettingsFragment();
                     FragmentTransaction transaction3 = getSupportFragmentManager().beginTransaction();

@@ -1,14 +1,20 @@
 package nl.example.myapplication;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,8 +94,8 @@ public class MoodboardFragment extends Fragment {
         moodBoardImage8 = view.findViewById(R.id.moodBoardImageView8);
         moodBoardImage9 = view.findViewById(R.id.moodBoardImageView9);
 
-
         moodBoardDatabaseHelper = new MoodBoardDatabaseHelper(getContext());
+
 
         ImageButton nextToMainBtn = view.findViewById(R.id.nextBtn);
         nextToMainBtn.setOnClickListener(new View.OnClickListener() {
@@ -109,8 +116,10 @@ public class MoodboardFragment extends Fragment {
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(Intent.createChooser(i, "Select Picture"), RESULT_LOAD_IMG);
+
             }
         });
+
 
         moodBoardImage2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -197,51 +206,62 @@ public class MoodboardFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+
+
         if (requestCode == RESULT_LOAD_IMG) {
             Uri selectedImage = data.getData();
             urls.add(String.valueOf(selectedImage));
+            moodBoardImage.setRotation(getCameraPhotoOrientation(String.valueOf(selectedImage)));
             moodBoardImage.setImageURI(selectedImage);
+
 
         } else if (requestCode == RESULT_LOAD_IMG2) {
             Uri selectedImage = data.getData();
             urls.add(String.valueOf(selectedImage));
+            moodBoardImage2.setRotation(getCameraPhotoOrientation(String.valueOf(selectedImage)));
             moodBoardImage2.setImageURI(selectedImage);
 
         } else if (requestCode == RESULT_LOAD_IMG3) {
             Uri selectedImage3 = data.getData();
             urls.add(String.valueOf(selectedImage3));
             moodBoardImage3.setImageURI(selectedImage3);
+            moodBoardImage3.setRotationX(90);
 
         } else if (requestCode == RESULT_LOAD_IMG4) {
             Uri selectedImage3 = data.getData();
             urls.add(String.valueOf(selectedImage3));
             moodBoardImage4.setImageURI(selectedImage3);
+            moodBoardImage4.setRotationX(90);
 
         } else if (requestCode == RESULT_LOAD_IMG5) {
             Uri selectedImage3 = data.getData();
             urls.add(String.valueOf(selectedImage3));
             moodBoardImage5.setImageURI(selectedImage3);
+            moodBoardImage5.setRotationX(90);
 
         } else if (requestCode == RESULT_LOAD_IMG6) {
             Uri selectedImage3 = data.getData();
             urls.add(String.valueOf(selectedImage3));
             moodBoardImage6.setImageURI(selectedImage3);
+            moodBoardImage6.setRotationX(90);
 
         } else if (requestCode == RESULT_LOAD_IMG7) {
             Uri selectedImage3 = data.getData();
             urls.add(String.valueOf(selectedImage3));
             moodBoardImage7.setImageURI(selectedImage3);
+            moodBoardImage7.setRotationX(90);
 
         } else if (requestCode == RESULT_LOAD_IMG8) {
             Uri selectedImage3 = data.getData();
             urls.add(String.valueOf(selectedImage3));
             moodBoardImage8.setImageURI(selectedImage3);
+            moodBoardImage8.setRotationX(90);
 
         } else if (requestCode == RESULT_LOAD_IMG9) {
             Uri selectedImage3 = data.getData();
             urls.add(String.valueOf(selectedImage3));
             moodBoardImage9.setImageURI(selectedImage3);
-
+            moodBoardImage9.setRotationX(90);
         }
     }
 
@@ -252,7 +272,57 @@ public class MoodboardFragment extends Fragment {
         }
     }
 
+    public int getCameraPhotoOrientation(String imageFilePath) {
+        Context context = this.getContext();
+        String realFilePath = getRealPathFromUri(context, Uri.parse(imageFilePath));
+        int rotate = 0;
+        try {
+
+            ExifInterface exif;
+
+            exif = new ExifInterface(realFilePath);
+            String exifOrientation = exif
+                    .getAttribute(ExifInterface.TAG_ORIENTATION);
+            Log.d("exifOrientation", exifOrientation);
+            int orientation = exif.getAttributeInt(
+                    ExifInterface.TAG_ORIENTATION,
+                    ExifInterface.ORIENTATION_NORMAL);
+            switch (orientation) {
+                case ExifInterface.ORIENTATION_ROTATE_270:
+                    rotate = 270;
+                    break;
+                case ExifInterface.ORIENTATION_ROTATE_180:
+                    rotate = 180;
+                    break;
+                case ExifInterface.ORIENTATION_ROTATE_90:
+                    rotate = 90;
+                    break;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return rotate;
+    }
+
+    public static String getRealPathFromUri(Context context, Uri contentUri) {
+        Cursor cursor = null;
+        try {
+            String[] proj = { MediaStore.Images.Media.DATA };
+            cursor = context.getContentResolver().query(contentUri, proj, null, null, null);
+            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            cursor.moveToFirst();
+            return cursor.getString(column_index);
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+    }
+
 }
+
+
 
 
 

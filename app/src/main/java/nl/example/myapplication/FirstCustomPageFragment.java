@@ -17,9 +17,9 @@ public class FirstCustomPageFragment extends PageFragment {
     @Override
     protected TransformItem[] getTransformItems() {
         return new TransformItem[]{
-                TransformItem.create(R.id.ivFirstImage, Direction.LEFT_TO_RIGHT, 0.2f),
-//                TransformItem.create(R.id.ivSecondImage, Direction.RIGHT_TO_LEFT, 0.06f),
-//                TransformItem.create(R.id.ivThirdImage, Direction.LEFT_TO_RIGHT, 0.08f),
+                TransformItem.create(R.id.textViewWelkom, Direction.LEFT_TO_RIGHT, 0.2f),
+                TransformItem.create(R.id.textViewIntroText, Direction.RIGHT_TO_LEFT, 0.06f),
+                TransformItem.create(R.id.textViewIntroText2, Direction.LEFT_TO_RIGHT, 0.08f),
 //                TransformItem.create(R.id.ivFourthImage, Direction.RIGHT_TO_LEFT, 0.1f),
 //                TransformItem.create(R.id.ivFifthImage, Direction.RIGHT_TO_LEFT, 0.03f),
 //                TransformItem.create(R.id.ivSixthImage, Direction.RIGHT_TO_LEFT, 0.09f),

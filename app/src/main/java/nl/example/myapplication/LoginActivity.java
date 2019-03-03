@@ -25,12 +25,10 @@ public class LoginActivity extends AppCompatActivity {
     EditText _emailText, _passwordText;
     Button _loginButton;
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-//        ButterKnife.inject(this);
 
         _emailText = findViewById(R.id.input_email);
         _passwordText = findViewById(R.id.input_password);

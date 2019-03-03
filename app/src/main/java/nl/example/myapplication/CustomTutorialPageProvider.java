@@ -23,5 +23,6 @@ public class CustomTutorialPageProvider implements TutorialPageProvider<Fragment
                 throw new IllegalArgumentException("Unknown position: " + position);
             }
         }
+
     }
 }
